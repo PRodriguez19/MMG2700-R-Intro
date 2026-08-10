@@ -1,5 +1,5 @@
 site_name: "MMG:2700 Foundations in R for Life Science"
-site_description: "test site" 
+site_description: "MMG 2700 — Foundations in R for Life Science"
 site_author: "Princess Rodriguez" 
 #site_url: https://prodriguez19.github.io/MMG3320-5320/
 
@@ -28,24 +28,10 @@ theme:
 nav:
   - Home:
       - Introduction: index.md
-      - Syllabus: pdf_materials/MMG3320-Spring-2026-Syllabus.pdf
-      - Schedule: pdf_materials/MMG3320-Spring-2026-Schedule.pdf
-      - Git Bash Install: ch01/gitbash-install.md
-      - Frequently Asked Questions: FAQ.md
-      - Quick Start: ch01/quick-start.md
-  - Slides:
-      - Overview: slides/index.md
-  - Printouts:
-      - Overview: pdf_materials/index.md
+      - Syllabus: resources/MMG2700_Syllabus-fall-2026.pdf
   - Lessons: 
       - Week 1:
-          - Overview: ch01/index.md
-          - Introducing the Shell (L1): ch01/01_week1_mmg3320.md
-          - Navigating the Shell (L2): ch01/02_week1_mmg3320.md
-
-  - Assignments:
-      - Homework 1 (L1): assignments/week1_assignment.md
-
+          - Overview: lessons/ch01/index.md
 
 markdown_extensions:
   - admonition
