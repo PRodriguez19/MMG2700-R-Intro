@@ -1,0 +1,63 @@
+site_name: "MMG:2700 Foundations in R for Life Science"
+site_description: "test site" 
+site_author: "Princess Rodriguez" 
+#site_url: https://prodriguez19.github.io/MMG3320-5320/
+
+theme:
+  name: material 
+  features:
+    - content.code.copy
+    - content.code.annotate 
+    - content.code.select
+    - navigation.tabs
+    - navigation.top
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home:
+      - Introduction: index.md
+      - Syllabus: pdf_materials/MMG3320-Spring-2026-Syllabus.pdf
+      - Schedule: pdf_materials/MMG3320-Spring-2026-Schedule.pdf
+      - Git Bash Install: ch01/gitbash-install.md
+      - Frequently Asked Questions: FAQ.md
+      - Quick Start: ch01/quick-start.md
+  - Slides:
+      - Overview: slides/index.md
+  - Printouts:
+      - Overview: pdf_materials/index.md
+  - Lessons: 
+      - Week 1:
+          - Overview: ch01/index.md
+          - Introducing the Shell (L1): ch01/01_week1_mmg3320.md
+          - Navigating the Shell (L2): ch01/02_week1_mmg3320.md
+
+  - Assignments:
+      - Homework 1 (L1): assignments/week1_assignment.md
+
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.critic
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+plugins:
+  - mkdocs-pdf
+  - search
+
