@@ -1,36 +1,28 @@
-## Unit 1
+## Unit 1: Foundations in R
 
 ### Introduction 
 
-In this unit, we will focus on building foundational skills for using the command-line interface (CLI), specifically the `bash` shell. The `bash` shell is a versatile scripting environment widely used on Unix-based systems for file management, task automation, and software interaction. By the end of this unit, you will be able to execute basic commands, write simple scripts, and grasp the core principles of shell scripting, equipping you to perform a variety of computational tasks efficiently.
-
-## Learning Objectives
-
-At the end of this unit students will be able to: 
-
-1.	Navigate the command line interface (CLI) using the `bash` shell. 
-2.	Create, organize, and manipulate data files and directories.  
-3.	Gain familiarity with using the VACC, an high-performance computing (HPC) cluster. 
+In this unit, we will focus on building foundational skills in R Programming including getting started with R and RStudio, creating and manipulating R objects, and understanding and manipulating vectors and other data structures. 
 
 ### How to use these materials 
 
-This guide is intended for the reader to follow along step by step in chronological order. As you read, make sure to practice your UNIX skills by completing the exercises and examples in each days' lesson. While the code is already written out in the text, typing out the code manually (rather than copy and pasting) will help speed up the learning process – practice makes progress!
+This guide is intended for students to follow along commands in chronological order. As you read, make sure to practice your R programming skills by completing the exercises and examples in each days' lesson. While the code is already written out in the text, typing out the code manually (rather than copy and pasting) will help speed up the learning process!
 
 **Important note:** 
 
 Examples of code will be arranged as a code chunk. This is distinguished by a slightly greyed out background behind the code text. 
 
-```bash 
-ssh username@vacc-user1.uvm.edu 
+```r 
+a + 5
 ```
 
-The output of executed code will occasionally be displayed as well in grey code chunks. An output is the consequence that occurs after code is executed. Outputs in this tutorials will begin with ##. This line of code is **not** meant to be typed only to compare. 
+The output of executed code will occasionally be displayed as well in grey code chunks. An output is the consequence that occurs after code is executed. Outputs in this tutorials will begin with `[1]`. This line of code is **not** meant to be typed only used as a visual reference to compare. 
 
 ``` 
-## genomics_data  other  raw_fastq  README.txt  reference_data 
+[1] 6
 ```
 
-### Advice for beginners 
+### Advice  
 
 You should:
 
