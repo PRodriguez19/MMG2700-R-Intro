@@ -4,7 +4,8 @@ site_author: "Princess Rodriguez"
 #site_url: https://prodriguez19.github.io/MMG3320-5320/
 
 theme:
-  name: material 
+  name: material
+  logo: resources/uvm_logo.png
   
   features:
     - content.code.copy
