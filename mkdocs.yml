@@ -5,17 +5,19 @@ site_author: "Princess Rodriguez"
 
 theme:
   name: material 
+  
   features:
     - content.code.copy
     - content.code.annotate 
     - content.code.select
     - navigation.tabs
     - navigation.top
+  
   palette: 
-    primary: teal
 
     # Palette toggle for light mode
     - scheme: default
+      primary: teal
       toggle:
         icon: material/brightness-7 
         name: Switch to dark mode
