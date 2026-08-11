@@ -36,6 +36,7 @@ nav:
   - Lessons: 
       - Week 1:
           - Overview: lessons/ch01/index.md
+          - Lesson 1: lessons/ch01/01_week1_mmg2700.md
 
 markdown_extensions:
   - admonition
