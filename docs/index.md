@@ -7,7 +7,9 @@ This course introduces students to programming in R, with a focus on application
 ## Required software: 
 This course will be taught using R and RStudio. To install R locally, please see installation instructions below: 
 
+!!! info "R Installation Instructions"
 
+    
 
 
 ### Citation
