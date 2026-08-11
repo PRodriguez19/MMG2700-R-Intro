@@ -12,6 +12,7 @@ theme:
     - navigation.tabs
     - navigation.top
   palette: 
+    primary: teal
 
     # Palette toggle for light mode
     - scheme: default
