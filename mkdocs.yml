@@ -5,7 +5,6 @@ site_author: "Princess Rodriguez"
 
 theme:
   name: material
-  logo: resources/uvm_logo.png
   
   features:
     - content.code.copy
