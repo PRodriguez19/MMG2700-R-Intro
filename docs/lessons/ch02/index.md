@@ -43,6 +43,7 @@ By the end of this week, you should be able to:
 * No hands-on R component. Lecture-based.
 
 We will introduce the basic concepts behind RNA-sequencing, including:
+
 * What RNA-seq measures
 * How RNA-seq experiments are performed
 * How sequencing reads are converted into gene-level measurements
@@ -52,7 +53,7 @@ We will introduce the basic concepts behind RNA-sequencing, including:
 
 ### Lesson 4 — Team-Based Learning
 
-We will use the Blackmore et al. paper to investigate how the researchers used RNA-seq to answer a biological question.
+We will use the Blackmore et al. paper to investigate how the researchers used RNA-seq to answer a biological question. Group and figure assignments will be made by the instructor for each paper discussion.
 
 | Time | Activity |
 | ------ | ----------- |

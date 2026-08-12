@@ -33,6 +33,7 @@ nav:
   - Home:
       - Introduction: index.md
       - Syllabus: resources/MMG2700_Syllabus-fall-2026.pdf
+      - Papers: resources/index.md
   - Lessons: 
       - Week 1:
           - Overview: lessons/ch01/index.md
