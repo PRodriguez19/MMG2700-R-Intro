@@ -38,6 +38,8 @@ nav:
           - Overview: lessons/ch01/index.md
           - Lesson 1: lessons/ch01/01_week1_mmg2700.md
           - Lesson 2: lessons/ch01/02_week1_mmg2700.md
+      - Week 2:
+          - Overview: lessons/ch02/index.md
 
 markdown_extensions:
   - admonition

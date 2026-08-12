@@ -1,8 +1,8 @@
-## Unit 1: Foundations in R
+## Unit 1: Foundations in R - Week 1
 
 ### Introduction 
 
-In this unit, we will focus on building foundational skills in R Programming including getting started with R and RStudio, creating and manipulating R objects, and understanding and manipulating vectors and other data structures. 
+This week, we will focus on building foundational skills in R Programming including getting started with R and RStudio, creating and manipulating R objects, and understanding and manipulating vectors and other data structures. 
 
 ### How to use these materials 
 
