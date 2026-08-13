@@ -10,25 +10,6 @@ The goal of the study was to investigate how an upper-respiratory influenza infe
 
 In this course, we will use a subset of these data to begin learning how to work with biological datasets in R. Our goal is not yet to perform a complete RNA-seq analysis. Instead, we will first learn how to explore, organize, and visualize RNA-seq data in R. Later in the course, we will return to RNA-seq and learn how to perform statistical analyses such as differential gene expression.
 
-### The dataset
-
-The dataset is provided as a comma-separated values (CSV) file. Each row represents a gene expression measurement for one gene in one sample.
-
-The first eleven columns contain information about the gene, sample, and experimental conditions:
-
-| Column | Description |
-| ------ | ----------- |
-| gene | The name of the gene that was measured |
-| sample | The name of the sample the gene expression was measured in |
-| expression | The value of the gene expression |
-| organism | The organism/species - here all data stem from mice |
-| age | The age of the mouse (all mice were 8 weeks here) |
-| sex | The sex of the mouse |
-| infection | The infection state of the mouse, i.e. infected with Influenza A or not infected. |
-| strain | The Influenza A strain. |
-| time | The duration of the infection (in days). |
-| tissue | The tissue that was used for the gene expression experiment, i.e. cerebellum or spinal cord. |
-| mouse | The mouse unique identifier. |
 
 ### What should you be able to do by the end of this week?
 
@@ -57,8 +38,8 @@ We will use the Blackmore et al. paper to investigate how the researchers used R
 
 | Time | Activity |
 | ------ | ----------- |
-| 45 mins | In-group discussion (groups of 3) |
-| 30 mins | Entire class figure discussion |
+| 45 mins | Team-Based Analysis (groups of 3) |
+| 30 mins | Scientific Figure Recitation |
 
 
 

@@ -1,4 +1,4 @@
-## Week 2 
+## Week 3
 
 ### Introduction 
 
@@ -35,31 +35,10 @@ The first eleven columns contain information about the gene, sample, and experim
 By the end of this week, you should be able to:
 
 * Describe the biological question addressed by the Blackmore et al. study.
-* Explain, at a basic level, what RNA-seq measures.
-* Identify the experimental variables in an RNA-seq dataset.
-
-### Lesson 3 — Introduction to RNA-sequencing
-
-* No hands-on R component. Lecture-based.
-
-We will introduce the basic concepts behind RNA-sequencing, including:
-
-* What RNA-seq measures
-* How RNA-seq experiments are performed
-* How sequencing reads are converted into gene-level measurements
-* What an RNA-seq expression matrix represents
-* Biological versus technical replicates
-* What questions RNA-seq can answer
-
-### Lesson 4 — Team-Based Learning
-
-We will use the Blackmore et al. paper to investigate how the researchers used RNA-seq to answer a biological question. Group and figure assignments will be made by the instructor for each paper discussion.
-
-| Time | Activity |
-| ------ | ----------- |
-| 45 mins | In-group discussion (groups of 3) |
-| 30 mins | Entire class figure discussion |
-
-
-
-
+* Describe what a data.frame is.
+* Load external data from a .csv file into a data frame.
+* Summarize the contents of a data frame.
+* Describe what a factor is.
+* Convert between strings and factors.
+* Reorder and rename factors.
+* Export and save data.
