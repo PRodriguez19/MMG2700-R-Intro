@@ -41,6 +41,12 @@ nav:
           - Lesson 2: lessons/ch01/02_week1_mmg2700.md
       - Week 2:
           - Overview: lessons/ch02/index.md
+          - Lesson 3: lessons/ch02/03_week2_mmg2700.md
+          - Lesson 4: lessons/ch02/04_week2_mmg2700.md
+      - Week 3:
+          - Overview: lessons/ch03/index.md
+          - Lesson 5: lessons/ch03/05_week3_mmg2700.md
+          - Lesson 6: lessons/ch03/06_week3_mmg2700.md
 
 markdown_extensions:
   - admonition
