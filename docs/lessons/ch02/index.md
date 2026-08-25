@@ -2,20 +2,16 @@
 
 ### Introduction 
 
-**How can we use RNA-sequencing to investigate what happens to cells and tissues during disease?**
+Throughout the semester, we will use Team-Based Learning (TBL) activities to practice the skills scientists use when reading research papers, analyzing data, and communicating scientific results. You will need to come to class prepared to discuss the review article and use it to answer questions about RNA-seq data analysis.
 
-This week, we will begin exploring RNA-sequencing (RNA-seq) data using a subset of the data published by Blackmore et al. (2017), Influenza infection triggers disease in a genetic model of experimental autoimmune encephalomyelitis.
-
-The goal of the study was to investigate how an upper-respiratory influenza infection affects gene expression in the central nervous system (CNS). Gender-matched eight-week-old C57BL/6 mice were inoculated intranasally with either saline or Influenza A virus. RNA was then collected from the cerebellum and spinal cord at 0, 4, and 8 days post-infection, and RNA-seq was used to characterize changes in the transcriptome.
-
-In this course, we will use a subset of these data to begin learning how to work with biological datasets in R. Our goal is not yet to perform a complete RNA-seq analysis. Instead, we will first learn how to explore, organize, and visualize RNA-seq data in R. Later in the course, we will return to RNA-seq and learn how to perform statistical analyses such as differential gene expression.
+For this first session, we will review the article together called, "From bench to bytes: a practical guide to RNA sequencing data analysis" by Dawadi et al. 2025. 
 
 
 ### What should you be able to do by the end of this week?
 
 By the end of this week, you should be able to:
 
-* Describe the biological question addressed by the Blackmore et al. study.
+* Describe the biological question addressed by the Dawadi et al. study.
 * Explain, at a basic level, what RNA-seq measures.
 * Identify the experimental variables in an RNA-seq dataset.
 
@@ -32,14 +28,11 @@ We will introduce the basic concepts behind RNA-sequencing, including:
 * Biological versus technical replicates
 * What questions RNA-seq can answer
 
-### Lesson 3 continued — Team-Based Learning
-
-We will use the Blackmore et al. paper to investigate how the researchers used RNA-seq to answer a biological question. Group and figure assignments will be made by the instructor for each paper discussion.
 
 | Time | Activity |
 | ------ | ----------- |
 | 45 mins | Team-Based Analysis (groups of 3) |
-| 30 mins | Scientific Figure Recitation |
+| 30 mins | mini-TBL (student expectations described in Lesson 3) |
 
 !!! note 
 
