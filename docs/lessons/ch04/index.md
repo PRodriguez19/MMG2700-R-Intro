@@ -1,4 +1,4 @@
-## Week 3
+## Week 4
 
 ### Introduction 
 
@@ -34,11 +34,8 @@ The first eleven columns contain information about the gene, sample, and experim
 
 By the end of this week, you should be able to:
 
-* Describe the biological question addressed by the Blackmore et al. study.
-* Describe what a data.frame is.
-* Load external data from a .csv file into a data frame.
-* Summarize the contents of a data frame.
-* Describe what a factor is.
-* Convert between strings and factors.
-* Reorder and rename factors.
-* Export and save data.
++ Describe what a factor is.
++ Reorder and rename factors.
++ Describe the purpose of the `dplyr` package.
++ Describe the concept of a wide and a long table format, and see how to reshape a data frame from one format to the other one.
++ Demonstrate how to join tables.
