@@ -1,41 +1,41 @@
 ## Week 4
 
-### Introduction 
+# Introduction to `dplyr`
 
-**How can we use RNA-sequencing to investigate what happens to cells and tissues during disease?**
+We have learned how to create objects, work with different data types, and access information stored in a data frame. But most real datasets are not ready to answer our questions right away. We often need to **select certain observations, choose specific variables, create new variables, or organize our data** before we can analyze or visualize it.
 
-This week, we will begin exploring RNA-sequencing (RNA-seq) data using a subset of the data published by Blackmore et al. (2017), Influenza infection triggers disease in a genetic model of experimental autoimmune encephalomyelitis.
+The **`dplyr`** package provides a set of functions designed to make these common data manipulation tasks easier. The functions use a consistent and readable syntax, allowing us to describe what we want to do with our data rather than writing complicated code.
 
-The goal of the study was to investigate how an upper-respiratory influenza infection affects gene expression in the central nervous system (CNS). Gender-matched eight-week-old C57BL/6 mice were inoculated intranasally with either saline or Influenza A virus. RNA was then collected from the cerebellum and spinal cord at 0, 4, and 8 days post-infection, and RNA-seq was used to characterize changes in the transcriptome.
+`dplyr` is part of the **tidyverse**, a collection of R packages designed to work together for data analysis.
 
-In this course, we will use a subset of these data to begin learning how to work with biological datasets in R. Our goal is not yet to perform a complete RNA-seq analysis. Instead, we will first learn how to explore, organize, and visualize RNA-seq data in R. Later in the course, we will return to RNA-seq and learn how to perform statistical analyses such as differential gene expression.
+## The Big Picture
 
-### The dataset
+Think of `dplyr` as a set of tools for **transforming a dataset into a form that is useful for answering a question**.
 
-The dataset is provided as a comma-separated values (CSV) file. Each row represents a gene expression measurement for one gene in one sample.
+When working with a dataset, you might want to:
 
-The first eleven columns contain information about the gene, sample, and experimental conditions:
+* **Choose specific rows** — for example, look only at female samples.
+* **Choose specific columns** — for example, keep only gene, tissue, and expression.
+* **Create or modify variables** — for example, calculate the difference between two measurements.
+* **Rename variables** — make column names clearer or more consistent.
+* **Rearrange rows** — for example, sort samples from highest to lowest expression.
+* **Summarize data** — for example, calculate the mean expression for each tissue.
+* **Group data** — perform calculations separately for different categories, such as treatment groups or tissues.
 
-| Column | Description |
-| ------ | ----------- |
-| gene | The name of the gene that was measured |
-| sample | The name of the sample the gene expression was measured in |
-| expression | The value of the gene expression |
-| organism | The organism/species - here all data stem from mice |
-| age | The age of the mouse (all mice were 8 weeks here) |
-| sex | The sex of the mouse |
-| infection | The infection state of the mouse, i.e. infected with Influenza A or not infected. |
-| strain | The Influenza A strain. |
-| time | The duration of the infection (in days). |
-| tissue | The tissue that was used for the gene expression experiment, i.e. cerebellum or spinal cord. |
-| mouse | The mouse unique identifier. |
+These operations can be combined to move from a **large, messy dataset** to a **smaller, organized dataset that answers a specific biological question**.
+
+For example, imagine you have a dataset containing gene expression measurements from multiple genes, tissues, and experimental groups. You might use `dplyr` to:
+
+**filter > select > create variables > group > summarize**
+
+The specific steps will depend on the question you are trying to answer. Throughout this section, we will learn the individual `dplyr` functions that allow us to perform these tasks and then combine them into more complex data analysis workflows.
+
 
 ### What should you be able to do by the end of this week?
 
 By the end of this week, you should be able to:
 
-+ Describe what a factor is.
-+ Reorder and rename factors.
++ Describe, reorder and rename factors.
 + Describe the purpose of the `dplyr` package.
 + Describe the concept of a wide and a long table format, and see how to reshape a data frame from one format to the other one.
 + Demonstrate how to join tables.
