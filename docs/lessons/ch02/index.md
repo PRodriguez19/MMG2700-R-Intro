@@ -32,7 +32,7 @@ We will introduce the basic concepts behind RNA-sequencing, including:
 * Biological versus technical replicates
 * What questions RNA-seq can answer
 
-### Lesson 4 — Team-Based Learning
+### Lesson 3 continued — Team-Based Learning
 
 We will use the Blackmore et al. paper to investigate how the researchers used RNA-seq to answer a biological question. Group and figure assignments will be made by the instructor for each paper discussion.
 
@@ -41,6 +41,8 @@ We will use the Blackmore et al. paper to investigate how the researchers used R
 | 45 mins | Team-Based Analysis (groups of 3) |
 | 30 mins | Scientific Figure Recitation |
 
+!!! note 
 
+    There will be **no in-person** class on September 10. Instead students should plan to meet with their group to submit the discussion questions prior to the due date and time.  
 
 
