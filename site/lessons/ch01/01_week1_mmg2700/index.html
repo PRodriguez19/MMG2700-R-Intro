@@ -1,0 +1,1777 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="MMG 2700: Foundations in R Programming for Life Science">
+      
+      
+        <meta name="author" content="Princess Rodriguez">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02_week1_mmg2700/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Lesson 1 - MMG 2700: Foundations in R Programming for Life Science</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-1-introduction-to-r-and-rstudio-ide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MMG 2700: Foundations in R Programming for Life Science" class="md-header__button md-logo" aria-label="MMG 2700: Foundations in R Programming for Life Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMG 2700: Foundations in R Programming for Life Science
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lesson 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Lessons
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MMG 2700: Foundations in R Programming for Life Science" class="md-nav__button md-logo" aria-label="MMG 2700: Foundations in R Programming for Life Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MMG 2700: Foundations in R Programming for Life Science
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/MMG2700_Syllabus-fall-2026.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../schedule/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Lessons
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lessons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Week 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lesson 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-1-introduction-to-r-and-rstudio-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 1: Introduction to R and RStudio IDE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is R?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is R?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-learn-r-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why learn R programming?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why learn R programming?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-r-used-in-the-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of R used in the media
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-do-we-get-r-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where do we get R packages?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-r-using-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run R using RStudio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-new-project-directory-in-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a new project directory in RStudio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a new project directory in RStudio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-project-in-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a project in RStudio?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizing-your-working-directory-setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizing your working directory &amp; setting up
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organizing your working directory & setting up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rstudio-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      RStudio Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-your-working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing your working directory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewing your working directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a path?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structuring-your-working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structuring your working directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interacting-with-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacting with R
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interacting with R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#console-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Console window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-command-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Console command prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-shortcuts-in-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard shortcuts in RStudio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-your-r-environment-rdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving your R environment (.Rdata)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best practices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary of Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_week1_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Week 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/03_week2_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Week 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03/04_week3_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03/05_week3_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Week 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04/06_week4_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04/07_week4_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-1-introduction-to-r-and-rstudio-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 1: Introduction to R and RStudio IDE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is R?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is R?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-learn-r-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why learn R programming?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why learn R programming?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-r-used-in-the-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of R used in the media
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-do-we-get-r-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where do we get R packages?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-r-using-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run R using RStudio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-new-project-directory-in-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a new project directory in RStudio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a new project directory in RStudio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-project-in-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a project in RStudio?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizing-your-working-directory-setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizing your working directory &amp; setting up
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organizing your working directory & setting up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rstudio-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      RStudio Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-your-working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing your working directory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewing your working directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a path?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structuring-your-working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structuring your working directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interacting-with-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacting with R
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interacting with R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#console-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Console window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-command-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Console command prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-shortcuts-in-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard shortcuts in RStudio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-your-r-environment-rdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving your R environment (.Rdata)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best practices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary of Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h2 id="lesson-1-introduction-to-r-and-rstudio-ide">Lesson 1: Introduction to R and RStudio IDE</h2>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Be able to describe the difference between R and RStudio</li>
+<li>Describe the purpose and use of each panel in RStudio IDE</li>
+<li>Be able to use common R syntax </li>
+</ul>
+<hr>
+<h1 id="what-is-r">What is R?</h1>
+<p>“R” is used to name a programming language and the software that reads and interprets the instructions written on the scripts of this language. Is specialized in statistical computing and graphics. </p>
+<p>The R environment combines:</p>
+<ul>
+<li>effective handling of big data </li>
+<li>collection of integrated tools</li>
+<li>graphical facilities</li>
+<li>simple and effective programming language</li>
+</ul>
+<h2 id="why-learn-r-programming">Why learn R programming?</h2>
+<figure>
+  <img alt="Why learn R?" src="../../../img/why_R.png" width="600">
+</figure>
+<p>R is a powerful environment. It has a wide range of statistics and general data analysis and visualization capabilities.</p>
+<ul>
+<li>Data handling, wrangling, and storage</li>
+<li>Wide array of statistical methods and graphical techniques available</li>
+<li>Easy to install on any platform and use (and it’s free!)</li>
+<li>Open source with a large and growing community of peers</li>
+<li>R produces high-quality graphics that are reproducible </li>
+</ul>
+<h4 id="example-of-r-used-in-the-media">Example of R used in the media</h4>
+<ul>
+<li><em>"At the BBC data team, we have developed an R package and an R cookbook to make the process of creating publication-ready graphics in our in-house style..."</em> - <a href="https://bbc.github.io/rcookbook/">BBC Visual and Data Journalism cookbook for R graphics</a></li>
+</ul>
+<h2 id="where-do-we-get-r-packages">Where do we get R packages?</h2>
+<p>To take full advantage of R, you need to install R packages. R packages are loadable extensions that contain code, data, documentation, and tests in a standardized, easy to share format that can easily be installed by R users. The primary repository for R packages is the Comprehensive R Archive Network (CRAN). </p>
+<p>CRAN is a global network of servers that store identical versions of R code, packages, documentation, etc (cran.r-project.org). To install a CRAN package, use:</p>
+<div class="highlight"><pre><span></span><code>install.packages("packageName")
+</code></pre></div>
+<p>Github is another common source used to store R packages; though, these packages do not necessarily meet CRAN standards so approach with caution. To install a Github packages use <code>library(devtools)</code> followed by <code>install_github()</code>. Many genomics and other packages useful to biologists / molecular biologists can be found on Bioconductor. Bioconductor and Bioconductor packages use <code>BiocManager::install</code> for installation; more on this later. </p>
+<h1 id="run-r-using-rstudio">Run R using RStudio</h1>
+<p>R is a programming language and it "comes with an environment or console that can read and execute your code". R can be used via command line interactively, command line using a script, or interactively through an environment. This course will demonstrate the utility of the RStudio integrated development environment (IDE). </p>
+<p>First time users often confuse R versus RStudio. At its simplest, R is like a car's engine while RStudio is like a car's dashboard as illustrated in the 
+Figure below.</p>
+<figure>
+  <img alt="R versus RStudio" src="../../../img/R_vs_RStudio_1.png" width="600">
+</figure>
+<p>More precisely, R is a programming language that runs computations, while RStudio is a freely available open-source <strong>integrated development environment (IDE)</strong> that provides an interface by adding many convenient features and tools. So just as the way of having access to a speedometer, rearview mirrors, and a navigation system makes driving much easier, using RStudio's interface makes using R much easier as well. </p>
+<blockquote>
+<p>RStudio provides an environment with many features to make using R easier and is a great alternative to working on R in the terminal. </p>
+</blockquote>
+<figure>
+  <img alt="R logo" src="../../../img/rstudio_logo.png" width="300">
+</figure>
+<ul>
+<li>Graphical user interface, not just a command prompt</li>
+<li>Great learning tool </li>
+<li>Free for academic use</li>
+<li>Platform agnostic</li>
+<li>Open source</li>
+</ul>
+<h1 id="creating-a-new-project-directory-in-rstudio">Creating a new project directory in RStudio</h1>
+<p>Let's create a new project directory for our "Introduction to R" lesson today. </p>
+<ol>
+<li>Open RStudio</li>
+<li>Go to the <code>File</code> menu and select <code>New Project</code>.</li>
+<li>In the <code>New Project</code> window, choose <code>New Directory</code>. Then, choose <code>New Project</code>. Name your new directory <code>Intro-to-R</code> and then "Create the project as subdirectory of:" the root of your home account (<code>~</code>).</li>
+<li>Click on <code>Create Project</code>.</li>
+<li>After your project is completed, if the project does not automatically open in RStudio, then go to the <code>File</code> menu, select <code>Open Project</code>, and choose <code>Intro-to-R.Rproj</code>.</li>
+<li>When RStudio opens, you will see three panels in the window.</li>
+<li>Go to the <code>File</code> menu and select <code>New File</code>, and select <code>R Script</code>. </li>
+<li>Go to the <code>File</code> menu and select <code>Save As...</code>, type <code>Intro-to-R.R</code> and select <code>Save</code></li>
+</ol>
+<p>The RStudio interface should now look like the screenshot below.</p>
+<figure>
+  <img alt="RStudio interface" src="../../../img/Rstudio_interface.png" width="800">
+</figure>
+<h2 id="what-is-a-project-in-rstudio">What is a project in RStudio?</h2>
+<p>It is simply a directory that contains everything related your analyses for a specific project. RStudio projects are useful when you are working on context- specific analyses and you wish to keep them separate. When creating a project in RStudio you associate it with a working directory of your choice (either an existing one, or a new one). A <code>. RProj file</code> is created within that directory and that keeps track of your command history and variables in the environment. The <code>.RProj file</code> can be used to open the project in its current state but at a later date.</p>
+<p>When a project is <strong>(re) opened</strong> within RStudio the following actions are taken:</p>
+<ul>
+<li>A new R session (process) is started</li>
+<li>The .RData file in the project's main directory is loaded, populating the environment with any objects that were present when the project was closed. </li>
+<li>The .Rhistory file in the project's main directory is loaded into the RStudio History pane (and used for Console Up/Down arrow command history).</li>
+<li>The current working directory is set to the project directory.</li>
+<li>Previously edited source documents are restored into editor tabs</li>
+<li>Other RStudio settings (e.g. active tabs, splitter positions, etc.) are restored to where they were the last time the project was closed.</li>
+</ul>
+<p><em>Information adapted from <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">RStudio Support Site</a></em></p>
+<h1 id="organizing-your-working-directory-setting-up">Organizing your working directory &amp; setting up</h1>
+<h2 id="rstudio-interface">RStudio Interface</h2>
+<p><strong>The RStudio interface has four main panels:</strong></p>
+<ol>
+<li><strong>Console</strong>: where you can type commands and see output. <em>The console is all you would see if you ran R in the command line without RStudio.</em></li>
+<li><strong>Script editor</strong>: where you can type out commands and save to file. You can also submit the commands to run in the console.</li>
+<li><strong>Environment/History</strong>: environment shows all active objects and history keeps track of all commands run in console</li>
+<li><strong>Files/Plots/Packages/Help</strong> is a handy browser for your current files, this is where your plots will appear, you can view package information, and much more.</li>
+</ol>
+<h2 id="viewing-your-working-directory">Viewing your working directory</h2>
+<p>Before we organize our working directory, let's check to see where our current working directory is located by typing into the console:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">getwd</span><span class="p">()</span><span class="w"> </span><span class="c1"># return an absolute filepath</span>
+<span class="c1"># this is also our first example of a function </span>
+</code></pre></div>
+<p>Your working directory should be the <code>Intro-to-R</code> folder constructed when you created the project. The working directory is where RStudio will automatically look for any files you bring in and where it will automatically save any files you create, unless otherwise specified. </p>
+<p>You can visualize your working directory by selecting the <code>Files</code> tab from the <strong>Files/Plots/Packages/Help</strong> window. </p>
+<figure>
+  <img alt="Get working directory" src="../../../img/Get_wd.png" width="400">
+</figure>
+<p>If you wanted to choose a different directory to be your working directory, you could navigate to a different folder in the <code>Files</code> tab, then, click on the <code>More</code> dropdown menu which appears as a Cog and select <code>Set As Working Directory</code>.</p>
+<figure>
+  <img alt="Set working directory" src="../../../img/Set_wd.png" width="400">
+</figure>
+<h3 id="what-is-a-path">What is a path?</h3>
+<p>According to Wikipedia, a path is "a string of characters used to uniquely identify a location in a directory structure."</p>
+<p>Therefore, a file path <strong>simply tells us where a file or files are located</strong>. You will need to direct R to the location of files that you want to work with or output that you create.</p>
+<p>The working directory is the location in your file system that you are currently working in. In other words, it is the default location that R will look for input files and write output files. </p>
+<h2 id="structuring-your-working-directory">Structuring your working directory</h2>
+<p>To organize your working directory for a particular analysis, you should separate the original data (raw data) from intermediate datasets. For instance, you may want to create a <code>data/</code> directory within your working directory that stores the raw data, and have a <code>results/</code> directory for intermediate datasets and a <code>figures/</code> directory for the plots you will generate.</p>
+<p>Let's create these three directories within your working directory by clicking on <code>New Folder</code> within the <code>Files</code> tab. </p>
+<p>When finished, your working directory should look like:</p>
+<figure>
+  <img alt="Complete working directory setup" src="../../../img/complete_wd_setup.png" width="400">
+</figure>
+<h2 id="setting-up">Setting up</h2>
+<p>This is more of a housekeeping task. In the future, we may be writing long lines of code in our script editor and want to make sure that the lines "wrap" and you don't have to scroll back and forth to look at your long line of code.</p>
+<p>Click on Code -&gt; Soft Wrap Long lines (make sure this is checked off)</p>
+<p>In addition, to avoid character encoding issues between Windows and other operating systems, we are going to set UTF-8 by default:</p>
+<figure>
+  <img alt="UTF-8" src="../../../img/utf8.png" width="400">
+</figure>
+<h1 id="interacting-with-r">Interacting with R</h1>
+<p>Now that we have our interface and directory structure set up, let's start playing with R! There are <strong>two main ways</strong> of interacting with R in RStudio: using the <strong>console</strong> or by using <strong>script editor</strong> (plain text files that contain your code).</p>
+<h3 id="console-window">Console window</h3>
+<p>The <strong>console window</strong> (in RStudio, the bottom left panel) is the place where R is waiting for you to tell it what to do, and where it will show the results of a command.  You can type commands directly into the console, but they will be forgotten when you close the session. </p>
+<p>Let's test it out:</p>
+<div class="highlight"><pre><span></span><code><span class="m">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">5</span>
+</code></pre></div>
+<blockquote>
+<p>How am I running the line without physically hitting Run? Does anyone know? </p>
+</blockquote>
+<figure>
+  <img alt="R Console" src="../../../img/console.png" width="400">
+</figure>
+<h2 id="script-editor">Script editor</h2>
+<p>Best practice is to enter the commands in the <strong>script editor</strong>, and save the script. </p>
+<p>To create an R script, click <code>File</code> &gt; <code>New File</code> &gt; <code>R Script</code>. You can save your script by clicking on the floppy disk icon. You can name your script whatever you want, perhaps "Lesson_1". R scripts end in .R. Save your R script to your working directory. </p>
+<p>You are encouraged to comment liberally to describe the commands you are running using <code>#</code>. This way, you have a complete record of what you did, you can easily show others how you did it and you can do it again later on if needed. </p>
+<p><strong>The Rstudio script editor allows you to 'send' the current line or the currently highlighted text to the R console by clicking on the <code>Run</code> button in the upper-right hand corner of the script editor</strong>. </p>
+<p>Now let's try entering commands to the <strong>script editor</strong> and using the comments character <code>#</code> to add descriptions and highlighting the text to run:</p>
+<pre><code># Intro to R Lesson
+
+# Interacting with R
+
+## I am adding 3 and 5. R is fun!
+3+5
+</code></pre>
+<p>Alternatively, you can run by simply pressing the <code>Ctrl</code> and <code>Return/Enter</code> keys at the same time as a shortcut.</p>
+<p>You should see the command run in the console and output the result.</p>
+<figure>
+  <img alt="R Script Editor" src="../../../img/script_editor_output.png" width="400">
+</figure>
+<p>What happens if we do that same command without the comment symbol <code>#</code>? Re-run the command after removing the # sign in the front:</p>
+<div class="highlight"><pre><span></span><code><span class="n">I</span><span class="w"> </span><span class="n">am</span><span class="w"> </span><span class="n">adding</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="m">5</span><span class="n">.</span><span class="w"> </span><span class="n">R</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">fun</span><span class="o">!</span>
+<span class="m">3+5</span>
+</code></pre></div>
+<p>Now R is trying to run that sentence as a command, and it 
+doesn't work. We get an error in the console <em>"Error: unexpected symbol in "I am" means that the R interpreter did not know what to do with that command."</em></p>
+<h2 id="console-command-prompt">Console command prompt</h2>
+<p>Interpreting the command prompt can help understand when R is ready to accept commands. Below lists the different states of the command prompt and how you can exit a command:</p>
+<p><strong>Console is ready to accept commands</strong>: <code>&gt;</code>.</p>
+<p>If R is ready to accept commands, the R console shows a <code>&gt;</code> prompt. </p>
+<p>When the console receives a command (by directly typing into the console or running from the script editor (<code>Ctrl-Enter</code>), R will try to execute it.</p>
+<p>After running, the console will show the results and come back with a new <code>&gt;</code> prompt to wait for new commands.</p>
+<p><strong>Console is waiting for you to enter more data</strong>: <code>+</code>.</p>
+<p>If R is still waiting for you to enter more data because it isn't complete yet,
+the console will show a <code>+</code> prompt. It means that you haven't finished entering
+a complete command. Often this can be due to you having not 'closed' a parenthesis or quotation. </p>
+<p><strong>Escaping a command and getting a new prompt</strong>: <code>esc</code></p>
+<p>If you're in Rstudio and you can't figure out why your command isn't running, you can click inside the console window and press <code>esc</code> to escape the command and bring back a new prompt <code>&gt;</code>.</p>
+<h2 id="keyboard-shortcuts-in-rstudio">Keyboard shortcuts in RStudio</h2>
+<p>In addition to some of the shortcuts described earlier in this lesson, we have listed a few more that can be helpful as you work in RStudio.</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>Enter</kbd></td>
+<td>Run command from script editor in console with Windows or Linux</td>
+</tr>
+<tr>
+<td><kbd>Command</kbd>+<kbd>Enter</kbd></td>
+<td>Run command from script editor in console with MacOS</td>
+</tr>
+<tr>
+<td><kbd>ESC</kbd></td>
+<td>Escape the current command to return to the command prompt</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>1</kbd></td>
+<td>Move cursor from console to script editor</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>2</kbd></td>
+<td>Move cursor from script editor to console</td>
+</tr>
+<tr>
+<td><kbd>Tab</kbd></td>
+<td>Use this key to complete a file path</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></td>
+<td>Comment the block of highlighted text</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
+<p>Try highlighting only <code>3 +</code> from your script editor and running it. Find a way to bring back the command prompt <code>&gt;</code> in the console.</p>
+</div>
+<h2 id="saving-your-r-environment-rdata">Saving your R environment (.Rdata)</h2>
+<p>When exiting RStudio, you will be prompted to save your R workspace or .RData. The .RData file saves the objects generated in your R environment. You can also save the .RData at any time using the floppy disk icon just below the Environment tab. You may also save your R workspace from the console using <code>save.image()</code>. RData files are often not visible in a directory. You can see them using <code>ls -a</code> from the terminal. RData files within a working directory associated with a given project will launch automatically under the default option Restore .RData into workspace at startup. You may also load .Rdata by using <code>load()</code>. </p>
+<h2 id="best-practices">Best practices</h2>
+<p>Before we move to complex concepts and getting familiar with the language, we want to point out a few things about best practices when working with R which will help you stay organized in the long run:</p>
+<ul>
+<li>Code and workflow are more reproducible if you can document everything that we do. Your end goal is not just to "do stuff", but to do it in a way that anyone can easily and exactly replicate your workflow and results. <strong>All code should be written in the script editor and saved to file, rather than working in the console.</strong> </li>
+<li>The <strong>R console</strong> should be mainly used to inspect objects, test a function or get help. </li>
+<li>Use <code>#</code> signs to comment. <strong>Comment liberally</strong> in your R scripts. This will help future you and other collaborators know what each line of code (or code block) was meant to do. Anything to the right of a <code>#</code> is ignored by R. </li>
+<li>To provide details about your R session, use <code>sessionInfo()</code></li>
+</ul>
+<h1 id="summary-of-commands">Summary of Commands</h1>
+<div class="highlight"><pre><span></span><code># commands 
+# getwd() - get working directory
+# setwd() - set working directory 
+# sessionInfo() - provides details about your current R session
+</code></pre></div>
+<hr>
+<h3 id="citation">Citation</h3>
+<p>To cite material from this course in your publications, please use:</p>
+<p>Some materials used in these lessons were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
+All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</p>
+<p>Other materials were derived from Babraham Bioinformatics - Training Courses. (n.d.). https://www.bioinformatics.babraham.ac.uk/training.html  </p>
+<p>NIH Bioinformatics Training and Education Program. "Introductory R for Novices". Last updated January 2026. https://bioinformatics.ccr.cancer.gov/docs/r_for_novices/</p>
+<hr></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

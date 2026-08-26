@@ -1,0 +1,1601 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="MMG 2700: Foundations in R Programming for Life Science">
+      
+      
+        <meta name="author" content="Princess Rodriguez">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../07_week4_mmg2700/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Lesson 6 - MMG 2700: Foundations in R Programming for Life Science</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-6-factors-dplyr-part-i" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MMG 2700: Foundations in R Programming for Life Science" class="md-header__button md-logo" aria-label="MMG 2700: Foundations in R Programming for Life Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMG 2700: Foundations in R Programming for Life Science
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lesson 6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ch01/" class="md-tabs__link">
+          
+  
+  Lessons
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MMG 2700: Foundations in R Programming for Life Science" class="md-nav__button md-logo" aria-label="MMG 2700: Foundations in R Programming for Life Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MMG 2700: Foundations in R Programming for Life Science
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/MMG2700_Syllabus-fall-2026.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../schedule/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Lessons
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lessons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Week 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/01_week1_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/02_week1_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Week 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/03_week2_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Week 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03/04_week3_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03/05_week3_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Week 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lesson 6
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 6
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-6-factors-dplyr-part-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 6: Factors &amp; dplyr Part I
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Factors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulating-data-with-dplyr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulating data with dplyr
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manipulating data with dplyr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-data-with-tidyverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading data with tidyverse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading data with tidyverse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-different-import-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some different import functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-columns-and-filtering-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting columns and filtering rows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mutate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-time-column-in-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Time Column in Hours
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouped-operations-split-apply-combine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grouped Operations: Split-apply-combine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grouped Operations: Split-apply-combine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-and-saving-tabular-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exporting and saving tabular data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exporting and saving tabular data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_week4_mmg2700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-6-factors-dplyr-part-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 6: Factors &amp; dplyr Part I
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Factors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulating-data-with-dplyr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulating data with dplyr
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manipulating data with dplyr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-data-with-tidyverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading data with tidyverse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading data with tidyverse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-different-import-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some different import functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-columns-and-filtering-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting columns and filtering rows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mutate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-time-column-in-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Time Column in Hours
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouped-operations-split-apply-combine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grouped Operations: Split-apply-combine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grouped Operations: Split-apply-combine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-and-saving-tabular-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exporting and saving tabular data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exporting and saving tabular data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h2 id="lesson-6-factors-dplyr-part-i">Lesson 6: Factors &amp; <code>dplyr</code> Part I</h2>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Describe what a factor is.</li>
+<li>Reorder and rename factors.</li>
+<li>Describe the purpose of the <code>dplyr</code> package.</li>
+<li>Describe the concept of a wide and a long table format, and see how to reshape a data frame from one format to the other one.</li>
+<li>Demonstrate how to join tables.</li>
+<li>Describe the purpose of the pipe operator (%&gt;% or |&gt;) and explain how it improves code readability.</li>
+</ul>
+<hr>
+<h1 id="introduction-to-factors">Introduction to Factors</h1>
+<p>So far, we have worked with data types such as numbers, logical values, and character strings. Another important type of data we encounter in biological datasets is <strong>categorical data</strong>. Categorical data represent a limited set of groups or categories, such as sex, tissue type, treatment group, or genotype.</p>
+<p>In R, categorical data can be represented using <strong>factors</strong>. Factors are designed to store a set of predefined categories, called <strong>levels</strong>. Unlike a character vector, a factor can only contain values that belong to its defined levels. Factors can also be <strong>ordered</strong> or <strong>unordered</strong>, depending on whether the categories have a meaningful order.</p>
+<p>Although factors often look like character vectors when we print them, R stores them differently. Understanding how factors work is important because R may treat them differently from character data when we manipulate or analyze them.</p>
+<p>For example, suppose we have a factor with two levels:</p>
+<div class="highlight"><pre><span></span><code><span class="n">sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"male"</span><span class="p">,</span><span class="w"> </span><span class="s">"female"</span><span class="p">,</span><span class="w"> </span><span class="s">"female"</span><span class="p">,</span><span class="w"> </span><span class="s">"male"</span><span class="p">,</span><span class="w"> </span><span class="s">"female"</span><span class="p">))</span><span class="w"> </span>
+
+<span class="c1"># this combines values into a vector</span>
+<span class="c1">#R is able to interpret this as five observations </span>
+</code></pre></div>
+<p>R will assign Level 1 to "female" and Level 2 to "male" because f comes before m. Notice that this occurs even though we typed "male" as the first element in the vector. </p>
+<p>You can see the level ranks using the function <code>levels()</code> and can find the number of levels using <code>nlevels()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">levels</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
+
+<span class="c1"># level 1 = female</span>
+<span class="c1"># level 2 = male</span>
+</code></pre></div>
+<p>In creating any visualizations, order matters, therefore we might want to reorder to improve interpretability of the plot.  </p>
+<p>For example: a plot showing high, low, med bars should be reordered to low, med, high. </p>
+<p>To reorder a factor by adding an argument:</p>
+<div class="highlight"><pre><span></span><code><span class="n">sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"male"</span><span class="p">,</span><span class="w"> </span><span class="s">"female"</span><span class="p">))</span>
+</code></pre></div>
+<p>In R’s memory, these factors are represented by integers (1, 2, 3), but are more informative than integers because factors are self describing: "female", "male" is more descriptive than 1, 2. </p>
+<p>When data is stored as a factor, you can use the <code>plot()</code> function to get a quick glance at the number of observations represented by each factor level. </p>
+<p>Let’s look at the number of males and females in our data below: </p>
+<div class="highlight"><pre><span></span><code><span class="nf">plot</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
+</code></pre></div>
+<p>If we want to rename these factor, it is sufficient to change its levels:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">levels</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"M"</span><span class="p">,</span><span class="w"> </span><span class="s">"F"</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>plot(sex)
+</code></pre></div>
+<p>So far we learned about bracket subsetting. This is handy, but it can be cumbersome and difficult to read, especially for complicated operations. Now we will introduce data manipulations using <code>dplyr</code>. </p>
+<h1 id="manipulating-data-with-dplyr">Manipulating data with <code>dplyr</code></h1>
+<p><em>clear your Global Environment before starting</em></p>
+<p>The package <code>dplyr</code> provides powerful tools for data manipulation tasks. It is built to work directly with data frames, with many manipulation tasks optimized.</p>
+<p>In order to access the <code>dplyr</code>-specific tools, we must load the <code>tidyverse</code> library. The <code>tidyverse</code> package is an “umbrella-package” that installs several useful packages for data analysis which work well together, such as <code>tidyr</code>, <code>dplyr</code>, <code>ggplot2</code>, and <code>tibble</code>.</p>
+<div class="highlight"><pre><span></span><code>library("tidyverse")
+</code></pre></div>
+<p>The <code>tidyverse</code> package is an “umbrella-package” that installs several useful packages for data analysis which work well together, such as <code>tidyr</code>, <code>dplyr</code>, <code>ggplot2</code>, tibble, etc. These packages help us to work and interact with the data. They allow us to do many things with your data, such as subsetting, transforming, visualising, etc.</p>
+<h2 id="loading-data-with-tidyverse">Loading data with tidyverse</h2>
+<p>Instead of <code>read.csv()</code>, we will read in our data using the <code>read_csv()</code> function from the tidyverse package <code>readr</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The Base R read functions contain <code>read</code> followed by a <code>.</code>, while the <code>readr</code> functions are followed by an <code>_</code>. This is an important distinction allowing the csv file to be read as a <code>tibble</code>. </p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">rna</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">"data/rnaseq.csv"</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># what do we notice when we view the data
+rna
+</code></pre></div>
+<ul>
+<li>Notice that the class of the data is now referred to as a <code>tibble</code>.</li>
+</ul>
+<p>The data structure of a <code>tibble</code> is very similar to a data frame, but here are some key differences: </p>
+<ul>
+<li>
+<p>It displays the data type of each column under its name. Note that <dbl> is a data type defined to hold numeric values with decimal points.</dbl></p>
+</li>
+<li>
+<p>It is designed to only prints the first few rows of data and only as many columns as fit on one screen.</p>
+</li>
+</ul>
+<h3 id="some-different-import-functions">Some different import functions</h3>
+<p>Import tab-delimited files (.tsv, .txt):
+- <code>read.delim()</code>
+- <code>read.table()</code> - <code>readr::read_delim()</code> - <code>readr::read_tsv()</code>
+- <code>readr::read_table()</code></p>
+<p>Comma separated files (.csv):
+- <code>read.csv()</code>
+- <code>readr::read_csv()</code> </p>
+<p>We are now going to learn some of the most common <code>dplyr</code> functions:</p>
+<ul>
+<li><code>select()</code>: subset columns</li>
+<li><code>filter()</code>: subset rows on conditions</li>
+<li><code>mutate()</code>: create new columns by using information from other columns</li>
+<li><code>group_by()</code> and <code>summarise()</code>: create summary statistics on grouped data</li>
+<li><code>arrange()</code>: sort results</li>
+<li><code>count()</code>: count discrete values</li>
+</ul>
+<h1 id="selecting-columns-and-filtering-rows">Selecting columns and filtering rows</h1>
+<p>What is nice about using <code>dplyr</code> functions is the first argument will always be the dataframe. To select columns of a data frame, use <code>select()</code>: </p>
+<div class="highlight"><pre><span></span><code><span class="nf">select</span><span class="p">(</span><span class="n">rna</span><span class="p">,</span><span class="w"> </span><span class="n">gene</span><span class="p">,</span><span class="w"> </span><span class="n">sample</span><span class="p">,</span><span class="w"> </span><span class="n">tissue</span><span class="p">,</span><span class="w"> </span><span class="n">expression</span><span class="p">)</span>
+</code></pre></div>
+<p>To select all columns except certain ones, put a “-” in front of the variable to exclude it.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">select</span><span class="p">(</span><span class="n">rna</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">tissue</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">organism</span><span class="p">)</span>
+</code></pre></div>
+<p>To choose rows based on a specific criteria, use <code>filter()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">filter</span><span class="p">(</span><span class="n">rna</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"Male"</span><span class="p">)</span>
+</code></pre></div>
+<p>Similar to subsetting, if we wanted to filter based on more than one criteria we can make use of the <code>&amp;</code> symbol. </p>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise </p>
+<p>Similar to subsetting, if we wanted to filter based on more than one criteria we can make use of the <code>&amp;</code> symbol. Filter the data so that only Male and NonInfected samples remain. </p>
+</div>
+<p>Now let’s imagine we are interested in the human homologs of the mouse genes analyzed in this dataset. This information can be found in the last column of the rna tibble, named <code>hsapiens_homolog_associated_gene_name</code>. To visualize it easily, lets create a new table containing just the 2 columns <code>gene</code> and <code>hsapiens_homolog_associated_gene_name</code> below and then output to object called <code>genes_new</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">genes_new</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="n">rna</span><span class="p">,</span><span class="w"> </span><span class="n">gene</span><span class="p">,</span><span class="w"> </span><span class="n">hsapiens_homolog_associated_gene_name</span><span class="p">)</span>
+<span class="c1">#genes_new</span>
+</code></pre></div>
+<p>Upon inspecting <code>genes_new</code>, we will see that the 3rd column in this data frame contains missing values <em>NA</em> in the human homolog column. </p>
+<p>What does NA mean? It means unknown, not zero, it means the data is missing. </p>
+<p>When we use <code>filter()</code> in dplyr, every row has to evaluate to TRUE or FALSE. If R sees an NA and we dont tell it what to do with it, things get weird. </p>
+<p>Lets consider the following line: </p>
+<div class="highlight"><pre><span></span><code><span class="c1">#filter(genes_new, hsapiens_homolog_associated_gene_name)</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Keep the rows, where the column exists. Thats what we think. </p>
+</li>
+<li>
+<p>However, what R actually sees is, evaluate this character vector as TRUE or FALSE. </p>
+</li>
+<li>
+<p>It contains strings and NAs. </p>
+</li>
+<li>
+<p>Filter needs a logical condition. </p>
+</li>
+</ul>
+<p>The solution is to make the logic explicit: </p>
+<div class="highlight"><pre><span></span><code><span class="nf">filter</span><span class="p">(</span><span class="n">genes_new</span><span class="p">,</span><span class="w"> </span><span class="nf">is.na</span><span class="p">(</span><span class="n">hsapiens_homolog_associated_gene_name</span><span class="p">))</span>
+</code></pre></div>
+<p>Here, I'm being very clear. I'm asking R a yes/no question for every row. Is the human homolog missing? If the answer is TRUE, keep the row. If its FALSE drop it. </p>
+<p>Final Exercise: </p>
+<p>Above, is showing how to keep rows WITHOUT a human homolog. </p>
+<ul>
+<li>Output this to <code>genes_no_homolog</code>. </li>
+<li>In a separate code chunk, keep rows WITH a human homolog and output to <code>genes_with_homolog</code>. </li>
+<li>Output number of rows for each R object. </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Keep rows WITHOUT a human homolog</span>
+<span class="n">genes_no_homolog</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">genes_new</span><span class="p">,</span><span class="w"> </span><span class="nf">is.na</span><span class="p">(</span><span class="n">hsapiens_homolog_associated_gene_name</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Keep rows WITH a human homolog</span>
+<span class="n">genes_with_homolog</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">genes_new</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">hsapiens_homolog_associated_gene_name</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">nrow</span><span class="p">(</span><span class="n">genes_no_homolog</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">nrow</span><span class="p">(</span><span class="n">genes_with_homolog</span><span class="p">)</span>
+</code></pre></div>
+<p>Use the <code>glimpse</code> command to check the structure of the dataset:</p>
+<div class="highlight"><pre><span></span><code>glimpse(rna)
+</code></pre></div>
+<p>Notice:</p>
+<ul>
+<li>Number of rows</li>
+<li>Column names</li>
+<li>The <code>sex</code> column consists of both "Male" and "Female" values</li>
+</ul>
+<p>Below, filter the dataset to include only samples where the <code>sex</code> column is "Male". Assign the output to a new object called <code>rna2</code></p>
+<div class="highlight"><pre><span></span><code>rna2 &lt;- filter(rna, sex == "Male")
+</code></pre></div>
+<p>Check the contents of <code>rna2</code> below: </p>
+<div class="highlight"><pre><span></span><code>glimpse(rna2)
+</code></pre></div>
+<p><strong>What changed?</strong> </p>
+<p>Now select only the following columns from <code>rna2</code>:</p>
+<ul>
+<li>gene</li>
+<li>sample</li>
+<li>tissue</li>
+<li>expression. </li>
+</ul>
+<p>Assign the output to <code>rna3</code></p>
+<div class="highlight"><pre><span></span><code>rna3 &lt;- select(rna2, gene, sample, tissue, expression)
+</code></pre></div>
+<p>Instead of creating multiple intermediate objects, we can chain operations together using pipes.</p>
+<h1 id="pipes">Pipes</h1>
+<p>Pipes let you take the output of one function and send it directly to the next, which is useful when you need to do many things to the same dataset. </p>
+<p>Pipes in R look like <code>%&gt;%</code> (made available via the magrittr package) or <code>|&gt;</code> (through base R). If you use RStudio, you can type the pipe with <code>Ctrl</code> + <code>Shift</code> + <code>M</code> if you have a PC or <code>Cmd</code> + <code>Shift</code> + <code>M</code> if you have a Mac.</p>
+<div class="highlight"><pre><span></span><code>rna |&gt;
+  filter(sex == "Male") |&gt;
+  select(gene, sample, tissue, expression)
+</code></pre></div>
+<p>Some may find it helpful to read the pipe like the word “then”. For instance, in the above example, we took the data frame <code>rna</code>, then we filtered for rows with <code>sex == "Male"</code>, then we selected columns <code>gene</code>, <code>sample</code>, <code>tissue</code>, and <code>expression</code>.</p>
+<p>An important conceptual moment occurs now when using R. </p>
+<p>R does not modify object automatically. R follows a principal called "objects are not changed unless you explicitly reassign them". </p>
+<p>R is taking <code>rna</code>, filtering it, selecting columns, and then printing the results to the console. That's it. R creates a temporary result in memory and displays it. It does not overwrite <code>rna</code> because you never told it to. </p>
+<p>If you want to keep the result, you must store it somewhere. You must save it. R is a functional programming language. It does not modify input objects by default, as this prevents accidental data destruction. </p>
+<div class="highlight"><pre><span></span><code>nrow(rna)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>rna |&gt;
+  filter(sex == "Male")
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nrow(rna)
+</code></pre></div>
+<p><strong>Challenge</strong>
+Take the next five minutes to: </p>
+<p>Subset the <code>rna</code> data to keep observations in female mice at time 0, where the gene has an expression higher than 50000, and retain only the columns <code>gene</code>, <code>sample</code>, <code>time</code>, <code>expression</code> and <code>age</code>. Redirect the output to <code>rna4</code>. </p>
+<div class="highlight"><pre><span></span><code>rna4 &lt;- rna |&gt;
+  filter(expression &gt; 50000,
+         sex == "Female",
+         time == 0 ) |&gt;
+  select(gene, sample, time, expression, age)
+</code></pre></div>
+<h1 id="mutate">Mutate</h1>
+<p>So far we have: </p>
+<ul>
+<li>Filtered rows (kept certain observations)</li>
+<li>Selected columns (kept certain variables)</li>
+</ul>
+<p>But what if we don't want to remove anything? What if we want to add new information? </p>
+<p>Now we will learn how to create new columns based on existing columns using <code>mutate()</code>. </p>
+<p>What does <code>mutate()</code> do?</p>
+<ul>
+<li>keeps all existing rows and columns</li>
+<li>Adds or modifies columns </li>
+</ul>
+<p>It does not remove anything unless you explicitly overwrite a column. </p>
+<h2 id="creating-a-time-column-in-hours">Creating a Time Column in Hours</h2>
+<p>We have a column called <code>time</code> that is measured in days. We would like to create a new column that shows the time in hours. So we can multiply time by 24. </p>
+<div class="highlight"><pre><span></span><code>rna |&gt;
+  mutate(time_hours = time * 24)
+</code></pre></div>
+<p>So far, there are three key syntaxes to keep track of:  </p>
+<ul>
+<li><code>&lt;-</code> : used to assign objects in your R environment</li>
+<li><code>=</code> : most commonly used inside of functions to name arguments or assign it to a value  </li>
+<li><code>==</code> : does not assign anything, it performs a comparison and returns <code>TRUE</code> or <code>FALSE</code></li>
+</ul>
+<p>Also note:</p>
+<ul>
+<li>We didnt remove anything</li>
+<li>We added a new column called <code>time_hours</code> at the end</li>
+</ul>
+<div class="highlight"><pre><span></span><code>rna |&gt;
+  mutate(time_hours = time * 24) |&gt;
+  select(time, time_hours)
+</code></pre></div>
+<h1 id="grouped-operations-split-apply-combine">Grouped Operations: Split-apply-combine</h1>
+<p>R calculated <code>time * 24</code> for every row independently, across the entire dataset.</p>
+<p>But what if we don’t want to treat all rows the same?</p>
+<p>What if we want to calculate something within categories? Then we would no longer be transforming individual rows, but analyzing a group of rows. </p>
+<p>Below we will begin by: “Take all rows that belong to the same gene, and analyze them together.”</p>
+<p>This is changing how subsequent functions behave! The <code>group_by</code> function does not calculate anything, it just prepares the data for grouped operations. </p>
+<div class="highlight"><pre><span></span><code>rna |&gt;
+  group_by(gene)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>rna |&gt;
+  group_by(gene) |&gt;
+  glimpse()
+</code></pre></div>
+<p>Now is a good time to introduce the next common step. Together this is known as the split-apply-combine paradigm. </p>
+<ul>
+<li>Split the data into groups using <code>group_by()</code></li>
+<li>Apply a summary calculation to each group</li>
+<li>Combine the results</li>
+</ul>
+<p>The data has been grouped by gene, now we can collapse each group into a single-row summary using the <code>summarize()</code></p>
+<ul>
+<li><code>mean_expression</code> is a new column containing the average expression for each gene </li>
+<li>The result has one row per gene, instead of one row per sample</li>
+<li>Other columns are automatically dropped unless included in the grouping </li>
+</ul>
+<div class="highlight"><pre><span></span><code>rna |&gt;
+  group_by(gene) |&gt;
+  summarise(mean_expression = mean(expression))
+</code></pre></div>
+<p><strong>Challenge</strong>
+Take the next five minutes to: </p>
+<p>Add multiple summaries at once. Above you are creating a new column with the mean expression. Now add, <code>max_expression</code> and <code>min_expression</code> columns. </p>
+<div class="highlight"><pre><span></span><code>rna |&gt;
+  group_by(gene) |&gt;
+  summarise(
+    mean_expression = mean(expression),
+    max_expression = max(expression),
+    min_expression = min(expression)
+  )
+</code></pre></div>
+<h2 id="exporting-and-saving-tabular-data">Exporting and saving tabular data</h2>
+<p>To export a data.frame to a text-based spreadsheet, we can use the <code>write.table</code> set of functions (<code>write.csv</code>, <code>write.delim</code>). </p>
+<div class="highlight"><pre><span></span><code>write.csv(rna, file = "data_output/my_rna.csv")
+</code></pre></div>
+<hr>
+<h3 id="citation">Citation</h3>
+<p>To cite material from this course in your publications, please use:</p>
+<p>Some materials used in these lessons were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
+All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</p>
+<p>Other materials were derived from Babraham Bioinformatics - Training Courses. (n.d.). https://www.bioinformatics.babraham.ac.uk/training.html  </p>
+<p>NIH Bioinformatics Training and Education Program. "Introductory R for Novices". Last updated January 2026. https://bioinformatics.ccr.cancer.gov/docs/r_for_novices/</p>
+<hr></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
