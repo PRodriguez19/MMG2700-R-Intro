@@ -1,5 +1,5 @@
-site_name: "MMG 2700: Foundations in R for Life Science"
-site_description: "MMG 2700: Foundations in R for Life Science"
+site_name: "MMG 2700: Foundations in R Programming for Life Science"
+site_description: "MMG 2700: Foundations in R Programming for Life Science"
 site_author: "Princess Rodriguez" 
 #site_url: https://prodriguez19.github.io/MMG3320-5320/
 
@@ -51,6 +51,7 @@ nav:
       - Week 4:
           - Overview: lessons/ch04/index.md
           - Lesson 6: lessons/ch04/06_week4_mmg2700.md
+          - Lesson 7: lessons/ch04/07_week4_mmg2700.md
 
 markdown_extensions:
   - admonition
