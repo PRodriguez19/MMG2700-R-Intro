@@ -1,4 +1,4 @@
-## Weekly Expectations Breakdown
+# Weekly Expectations Breakdown
 
 | Date | Week | Lesson | Before Class/Student Preparation | Due/Submit | 
 | ---- | ---- | ------ | --------------------------------- | ---------- |
