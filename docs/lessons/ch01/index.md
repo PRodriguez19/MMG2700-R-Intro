@@ -1,4 +1,4 @@
-## Unit 1: Foundations in R - Week 1
+## Week 1: Foundations in R
 
 ### Introduction 
 
