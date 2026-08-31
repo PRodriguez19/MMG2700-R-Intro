@@ -32,9 +32,10 @@ theme:
 nav:
   - Home:
       - Introduction: index.md
-      - Syllabus: resources/MMG2700_Syllabus-fall-2026.pdf
-      - Schedule: schedule.md
-      - Papers: resources/index.md
+      - Syllabus: resources/MMG2700_Syllabus-fall-2026_update.pdf
+      - Schedule: resources/MMG2700_Schedule-fall-2026.pdf
+      - TBL Papers: resources/index.md
+      - Weekly Expectations: expectations.md
   - Lessons: 
       - Week 1:
           - Overview: lessons/ch01/index.md
