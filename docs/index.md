@@ -1,4 +1,4 @@
-# MMG 2700: Foundations in R for Life Sciences
+# MMG 2700: Foundations in R Programming for Life Sciences
 
 ## Introduction 
 
