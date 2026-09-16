@@ -6,9 +6,9 @@
 | Sept 3 | 1 | Lesson 2 | None | None | 
 | Sept 8 | 2 | Lesson 3 | Prepare for *mini-TBL* | None | 
 | Sept 10 | 2 | No Class | None | Mini-TBL Worksheet | 
-| Sept 15 | 3 | Lesson 4 | Review Lessons 1-5 | Quiz #1 |
+| Sept 15 | 3 | Lesson 4 | Review Lessons 1-4 | None |
 | Sept 17 | 3 | Lesson 5 | Prepare for TBL | None |
-| Sept 22 | 4 | Lesson 6 | None | TBL Worksheet & Class Participation Points |
+| Sept 22 | 4 | Lesson 6 | None | TBL Worksheet & Quiz#1 |
 | Sept 24 | 4 | Lesson 7 | None | Class Participation Points |
 | Sept 29 | 5 | Lesson 8 | Review Lessons 6-9 | Quiz #2 |
 | Oct 1 | 5 | Lesson 9 | Prepare for TBL | None |
