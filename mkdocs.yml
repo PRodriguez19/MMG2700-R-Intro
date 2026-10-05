@@ -56,6 +56,10 @@ nav:
           - Overview: lessons/ch05/index.md
           - Lesson 7: lessons/ch05/07_week5_mmg2700.md
           - Lesson 8: lessons/ch05/08_week5_mmg2700.md
+      - Week 6: 
+          - Overview: lessons/ch06/index.md
+          #- Lesson 9: lessons/ch06/09_week6_mmg2700.md
+          #- Lesson 10: lessons/ch06/10_week6_mmg2700.md
 
 markdown_extensions:
   - admonition

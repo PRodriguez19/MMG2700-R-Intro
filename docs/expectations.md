@@ -12,13 +12,13 @@
 | Sept 24 | 4 | Lesson 6b | None | Class Participation Points |
 | Sept 29 | 5 | Lesson 7 | None | None |
 | Oct 1 | 5 | Lesson 8 | Review Lessons 5-7 | Quiz #2 |
-| Oct 6 | 6 | Lesson 9 | Prepare for TBL | None |
-| Oct 8 | 6 | Lesson 10 | None | TBL Worksheet |
-| Oct 13 | 7 | Lesson 11 | Review Lessons 9-11 | Quiz #3 |
-| Oct 15 | 7 | Lesson 12 | Prepare for TBL | None |
-| Oct 20 | 8 | Lesson 13 | None | TBL Worksheet |
-| Oct 22 | 8 | Lesson 14 | None  | None |
-| Oct 27 | 9 | Lesson 15 | None  | None |
+| Oct 6 | 6 | Lesson 9 | None | None |
+| Oct 8 | 6 | Lesson 10 | Prepare for TBL | None |
+| Oct 13 | 7 | Lesson 11 | None | TBL Worksheet |
+| Oct 15 | 7 | Lesson 12 | Review Lessons 8-11 | Quiz #3 |
+| Oct 20 | 8 | Lesson 13 | None | None |
+| Oct 22 | 8 | Lesson 14 | Prepare for TBL  | None |
+| Oct 27 | 9 | Lesson 15 | None  | TBL Worksheet |
 | Oct 29 | 9 | Lesson 16 | Review Lessons 12-16 | Quiz #4 |
 | Nov 3 | 10 | Lesson 17 | Prepare for TBL | None |
 | Nov 5 | 10 | Lesson 18 | Prepare for Project 1 Q&A | None |
