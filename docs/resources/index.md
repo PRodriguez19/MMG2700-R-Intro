@@ -12,7 +12,7 @@ Below are the papers we will be discussing during TBL dates indicated.
 | --------- | --------------------- |
 | Sept 8 | Dawadi.et.al.2025 |
 | Sept 17 | Blackmore.et.al.2017 |
-| Oct 1 | Himes.et.al.2014 |
-| Oct 15 | Arnesen.et.al.2021 |
-| Nov 3 | Sabikunnahar.et.al.2025
-| Nov 12 | TBD | 
+| Oct 8 | Himes.et.al.2014 |
+| TBD| Arnesen.et.al.2021 |
+| TBD | Sabikunnahar.et.al.2025
+| TBD | TBD | 
