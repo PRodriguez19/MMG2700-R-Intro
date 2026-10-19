@@ -1,21 +1,21 @@
-## Week 7
+## Week 8
 
-# Visualizing Differential Gene Expression Data
+# Multi-Panel Figures and TBL
 
-**Weekly overview:** Students will use differential expression results generated with edgeR to recreate the bar plot and volcano plot from Figure 1 of Himes et al. (2014). Through guided analysis in R, students will learn how to interpret fold changes, identify differentially expressed genes, and communicate results using publication-ready visualizations in `ggplot2` and `EnhancedVolcano`.
+This week, we will move from creating individual plots to combining visualizations into multi-panel figures and interpreting published figures in the context of biological research. We will begin with the Himes et al. (2014) paper and then apply our skills to a new study by Arnesen et al. (2021).
 
-The week emphasizes connecting biological interpretation, statistical significance, and data visualization to understand how gene expression differs between experimental conditions.
+## Tuesday: What we will do
 
-## Weekly learning progression
+1. Review previous work. Revisit the volcano plot and fold-change bar plot generated from Himes et al. (2014).
+2. Combine plots. Store each plot as an R object and use patchwork to assemble Figure 1A and 1B into a multi-panel figure.
+3. Customize the layout. Practice arranging panels, adjusting relative widths, adding a shared title, and labeling panels.
+4. Apply your skills independently. Recreate Figure 2 using CRISPLD2, C13ORF15, KCTD12, PTX3, and SERPINA3.
+5. Troubleshoot gene symbols. Investigate why a gene might not appear in a filter and consider how gene annotation changes affect analysis.
 
-- Part 1: Building and interpreting volcano plots. Students will construct a volcano plot layer-by-layer in `ggplot2`, classify genes as up-regulated, down-regulated, or unchanged using fold-change and significance thresholds, and explain why false discovery rate (FDR) adjustment is important when testing thousands of genes simultaneously.
+## Thursday: Team-Based Learning
 
-- Part 2: Bar plots of fold change. Students will identify relevant columns in differential expression results and normalized counts tables, calculate fold changes, select genes of interest with `dplyr::filter()`, and build bar plots with `ggplot2`. They will summarize donor-level fold changes using means and error bars, then refine their plots to match the published figure.
+We will shift from coding-focused practice to interpretation the paper by **Arnesen et al. (2021).** 
 
-- Part 3: Understanding differential expression. Students will revisit the Himes et al. (2014) airway smooth muscle dataset and interpret the experimental design and columns in an edgeR results table. They will explore how log2 fold change and adjusted p-values describe the magnitude and statistical significance of gene expression differences.
+**Our discussion will be limited to the paper's first three figures.**
 
-- Part 4: Publication-ready visualization. Students will use EnhancedVolcano to generate a polished volcano plot, label genes of interest, and compare their visualizations with Figure 1 of Himes et al. (2014).
-
-## End-of-week goal
-
-By the end of the week, students will be able to recreate and interpret the bar plot and volcano plot from Himes et al. (2014) using their own edgeR results, explaining how the visualizations communicate both the magnitude and statistical significance of differential gene expression.
+During the TBL, you will work with your team to interpret the figures, identify what the data show, and evaluate how the results support the authors' conclusions. Be prepared to discuss the experimental design, the purpose of each visualization, and the biological significance of the findings.
