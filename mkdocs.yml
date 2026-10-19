@@ -63,6 +63,9 @@ nav:
       - Week 7: 
           - Overview: lessons/ch07/index.md
           - Lesson 11: lessons/ch07/11_week7_mmg2700.md
+          - Lesson 12: lessons/ch07/12_week7_mmg2700.md
+      - Week 8: 
+          - Overview: lessons/ch08/index.md
 
 markdown_extensions:
   - admonition
